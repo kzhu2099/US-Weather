@@ -7,7 +7,7 @@ name = 'myweather'
 
 version = '1.0.0'
 
-description = 'a library that can give you the weather'
+description = 'a library that brings global weather to you'
 
 authors = [{name = 'Kevin Zhu'}, {email = 'kzhu2099@gmail.com'}]
 maintainers = [{name = 'Kevin Zhu'}, {email = 'kzhu2099@gmail.com'}]
@@ -42,5 +42,5 @@ Homepage = 'https://github.com/kzhu2099/My-Weather'
 Issues = 'https://github.com/kzhu2099/My-Weather/issues'
 
 [tool.setuptools]
-packages = ['mynyt']
+packages = ['myweather']
 license-files = []
