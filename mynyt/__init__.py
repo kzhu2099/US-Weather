@@ -1,0 +1,3 @@
+from .MyWeather import (
+    MyWeather
+)
