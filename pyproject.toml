@@ -5,7 +5,7 @@ build-backend = 'setuptools.build_meta'
 [project]
 name = 'usweather'
 
-version = '1.0.1'
+version = '1.0.2'
 
 description = 'a library that brings U.S. weather to you in a daily email'
 

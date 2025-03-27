@@ -225,7 +225,7 @@ p, div {
 '''
 <div style = 'max-width: 300px; width: 100%; margin-left: 10px; margin-right: 10px;'>
     <h3>{name}</h3>
-    <p><br>
+    <p>
     {short_forecast}<br>
     Temperature: {temperature} °F<br>
     Precipitation: {precipitation}%<br>
