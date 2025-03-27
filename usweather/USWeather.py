@@ -1,6 +1,6 @@
 '''
 Author: Kevin Zhu
-The main class for the myweather library.
+The main class for the usweather library.
 '''
 
 import requests
@@ -13,11 +13,11 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
-class MyWeather:
+class USWeather:
     def __init__(self, sender_email, sender_email_app_password, style_sheet = None):
 
         '''
-        The main class for the myweather library.
+        The main class for the usweather library.
 
         Parameters
         ----------
@@ -72,7 +72,7 @@ p, div {
             'limit': 1
         }
 
-        response = requests.get(self.location_api, params = params, headers = {'User-Agent': 'myweather/1.0'})
+        response = requests.get(self.location_api, params = params, headers = {'User-Agent': 'usweather/1.0'})
 
         if response.status_code == 200:
             data = response.json()
@@ -100,7 +100,7 @@ p, div {
             if unsuccessful, returns an empty dict and prints the status code
         '''
 
-        response = requests.get(self.weather_api + path, headers = {'User-Agent': f'myweather_user ({self.sender_email})'})
+        response = requests.get(self.weather_api + path, headers = {'User-Agent': f'usweather_user ({self.sender_email})'})
 
         if response.status_code == 200:
             data = response.json()

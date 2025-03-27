@@ -1,11 +1,11 @@
-# myweather
+# usweather
 
-myweather is a library that brings U.S. weather to you in a daily email.
+usweather is a library that brings U.S. weather to you in a daily email.
 
-- HomePage: https://github.com/kzhu2099/My-Weather
-- Issues: https://github.com/kzhu2099/My-Weather/issues
+- HomePage: https://github.com/kzhu2099/US-Weather
+- Issues: https://github.com/kzhu2099/US-Weather/issues
 
-[![PyPI Downloads](https://static.pepy.tech/badge/myweather)](https://pepy.tech/projects/myweather)
+[![PyPI Downloads](https://static.pepy.tech/badge/usweather)](https://pepy.tech/projects/usweather)
 
 Author: Kevin Zhu
 
@@ -18,7 +18,7 @@ Author: Kevin Zhu
 
 ## Installation
 
-To install myweather, use pip: ```pip install myweather```.
+To install usweather, use pip: ```pip install usweather```.
 
 However, many prefer to use a virtual environment.
 
@@ -33,9 +33,9 @@ cd /path/to/your/directory
 pip install virtualenv
 python3 -m venv .venv
 
-# install myweather
+# install usweather
 source .venv/bin/activate
-pip install myweather
+pip install usweather
 
 deactivate # when you are completely done
 ```
@@ -51,9 +51,9 @@ cd C:path\to\your\directory
 pip install virtualenv
 python3 -m venv .venv
 
-# install myweather
+# install usweather
 .venv\Scripts\activate
-pip install myweather
+pip install usweather
 
 deactivate # when you are completely done
 ```
@@ -63,9 +63,9 @@ deactivate # when you are completely done
 The most basic features can be found in the examples, but you must setup the emailing yourself (tutorial below).
 
 ```python
-from myweather import MyWeather
+from usweather import USWeather
 
-w = MyWeather('your_email@example.com', 'your appp pass word')
+w = USWeather('your_email@example.com', 'your appp pass word')
 w.set_location_name('New York')
 
 forecast = w.get_forecast(days = 7, skip_nights = False)
@@ -104,7 +104,7 @@ Gmail: https://myaccount.google.com/apppasswords
 
 Outlook: https://go.microsoft.com/fwlink/?linkid=2274139
 
-They only appear once and will grant complete access to your account!! You can always make more. Finally, copy and paste the app password into the instantiation for MyWeather.
+They only appear once and will grant complete access to your account!! You can always make more. Finally, copy and paste the app password into the instantiation for usweather.
 
 Further help can be found here:
 Gmail: https://support.google.com/mail/answer/185833?hl=en

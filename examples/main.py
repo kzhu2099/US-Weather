@@ -1,12 +1,12 @@
 '''
 Author: Kevin Zhu
-A basic example for the myweather library,
+A basic example for the usweather library,
 '''
 
-from myweather import MyWeather
+from usweather import USWeather
 
 if __name__ == '__main__':
-    w = MyWeather('your_email@example.com', 'your appp pass word')
+    w = USWeather('your_email@example.com', 'your appp pass word')
     w.set_location_name('New York')
 
     '''

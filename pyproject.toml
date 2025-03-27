@@ -3,7 +3,7 @@ requires = ['setuptools', 'wheel']
 build-backend = 'setuptools.build_meta'
 
 [project]
-name = 'myweather'
+name = 'usweather'
 
 version = '1.0.0'
 
@@ -35,13 +35,13 @@ requires-python = '>= 3.9'
 
 dependencies = [
     'requests',
-    'pytz
+    'pytz'
 ]
 
 [project.urls]
-Homepage = 'https://github.com/kzhu2099/My-Weather'
-Issues = 'https://github.com/kzhu2099/My-Weather/issues'
+Homepage = 'https://github.com/kzhu2099/US-Weather'
+Issues = 'https://github.com/kzhu2099/US-Weather/issues'
 
 [tool.setuptools]
-packages = ['myweather']
+packages = ['usweather']
 license-files = []
