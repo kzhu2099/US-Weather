@@ -13,6 +13,8 @@ import smtplib
 from email.mime.multipart import MIMEMultipart
 from email.mime.text import MIMEText
 
+from kzutil import send_email
+
 class USWeather:
     def __init__(self, sender_email, sender_email_app_password, style_sheet = None):
 
@@ -265,15 +267,9 @@ p, div {
             custom template for the main email
         '''
 
-        try:
-            print('Connecting to Server...')
-            server = smtplib.SMTP(*server_info)
-            server.ehlo()
-            server.starttls()
-            server.login(self.sender_email, self.sender_email_app_password)
-
-            html_body = weather_html_body or self.html_body
-            html_template = main_html_template or '''\
+        html_body = weather_html_body or self.html_body
+        html_template = main_html_template or \
+'''
 <!DOCTYPE html>
 <html>
     <head>
@@ -290,32 +286,10 @@ p, div {
 </html>
 '''
 
-            email = MIMEMultipart('related')
-            email['From'] = self.sender_email
-            latest_time = datetime.datetime.now(pytz.timezone(timezone))
-            current_date = datetime.datetime.strftime(latest_time, '%b %d, %Y')
-            email_time = datetime.datetime.strftime(latest_time, '%I:%M:%S %p %Z')
+        full_html = html_template.format(
+            style_sheet = self.style_sheet,
+            location_name = self.location_name,
+            html_body = html_body
+        )
 
-            full_subject = f'{main_subject} @ {current_date} {email_time}'
-            print(f'({full_subject})')
-
-            email['To'] = recipient
-            email['Subject'] = full_subject
-
-            full_html = html_template.format(
-                style_sheet = self.style_sheet,
-                location_name = self.location_name,
-                html_body = html_body
-            )
-
-            email.attach(MIMEText(full_html, 'html'))
-
-            server.sendmail(self.sender_email, [recipient], email.as_string())
-
-            time.sleep(3)
-
-        except Exception as e:
-            print(f'Error encountered when sending email: {e}')
-
-        finally:
-            server.quit()
+        send_email(self.sender_email, self.sender_email_app_password, recipient, main_subject, full_html, server_info, timezone)

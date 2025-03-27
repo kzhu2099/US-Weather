@@ -35,7 +35,8 @@ requires-python = '>= 3.9'
 
 dependencies = [
     'requests',
-    'pytz'
+    'pytz',
+    'kzutil'
 ]
 
 [project.urls]

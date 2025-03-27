@@ -1,2 +1,3 @@
 pytz>=2025.1
 requests>=2.0.0
+kzutil>=1.0.0
