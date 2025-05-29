@@ -5,7 +5,7 @@ build-backend = 'setuptools.build_meta'
 [project]
 name = 'usweather'
 
-version = '1.0.2'
+version = '1.1.0'
 
 description = 'a library that brings U.S. weather to you in a daily email'
 
@@ -13,7 +13,7 @@ authors = [{name = 'Kevin Zhu'}, {email = 'kzhu2099@gmail.com'}]
 maintainers = [{name = 'Kevin Zhu'}, {email = 'kzhu2099@gmail.com'}]
 
 classifiers = [
-    'Development Status :: 4 - Beta',
+    'Development Status :: 5 - Production/Stable',
 
     'Intended Audience :: Developers',
     'Intended Audience :: End Users/Desktop',
@@ -43,6 +43,8 @@ dependencies = [
 Homepage = 'https://github.com/kzhu2099/US-Weather'
 Issues = 'https://github.com/kzhu2099/US-Weather/issues'
 
+[tool.setuptools.packages.find]
+include = ['PASTENAME', 'PASTENAME.*']
+
 [tool.setuptools]
-packages = ['usweather']
 license-files = []
